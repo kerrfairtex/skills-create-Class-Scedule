@@ -1,3 +1,6 @@
+const { execFileSync } = require('child_process');
+const path = require('path');
+
 const {
   add,
   subtract,
@@ -7,6 +10,23 @@ const {
   power,
   squareRoot,
 } = require('../calculator');
+
+// Helper: run the calculator CLI and return stdout/stderr
+function runCLI(args = []) {
+  const script = path.resolve(__dirname, '../calculator.js');
+  try {
+    const stdout = execFileSync(process.execPath, [script, ...args], {
+      encoding: 'utf8',
+    });
+    return { stdout: stdout.trim(), exitCode: 0 };
+  } catch (err) {
+    return {
+      stdout: (err.stdout || '').trim(),
+      stderr: (err.stderr || '').trim(),
+      exitCode: err.status || 1,
+    };
+  }
+}
 
 describe('Basic Calculator Operations', () => {
   // --- add ---
