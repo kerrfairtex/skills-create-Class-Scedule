@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0; color:#14532d;">Welcome, {{ user.full_name }}</h2>
+  <p style="color:#4b5563;">You are signed in as <strong>{{ user.role }}</strong>. This is the Class Schedule Management System dashboard.</p>
+  <div class="grid">
+    <div class="stat"><div class="n">{{ stats.teachers }}</div><div class="l">Teachers</div></div>
+    <div class="stat"><div class="n">{{ stats.subjects }}</div><div class="l">Subjects</div></div>
+    <div class="stat"><div class="n">{{ stats.rooms }}</div><div class="l">Rooms</div></div>
+    <div class="stat"><div class="n">{{ stats.sections }}</div><div class="l">Sections</div></div>
+    <div class="stat"><div class="n">{{ stats.entries }}</div><div class="l">Schedule Entries</div></div>
+  </div>
+</div>
+{% endblock %}
