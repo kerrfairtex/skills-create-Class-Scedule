@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card" style="max-width: 380px; margin: 3rem auto;">
+  <h2 style="margin-top:0; color:#14532d;">Sign in</h2>
+  <p style="color:#4b5563; font-size:0.9rem;">Class Schedule Management System</p>
+  <form method="post" action="{{ url_for('auth.login') }}">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" autofocus required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <label style="font-weight:400; margin-top:0.8rem;">
+      <input type="checkbox" name="remember"> Remember me
+    </label>
+    <button class="btn" type="submit" style="margin-top:1rem; width:100%;">Log in</button>
+  </form>
+</div>
+{% endblock %}

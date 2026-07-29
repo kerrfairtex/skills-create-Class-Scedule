@@ -50,3 +50,12 @@ build/
 
 # Impeccable local cache
 .impeccable/hook.cache.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Flask instance folder (SQLite db + backups)
+instance/
