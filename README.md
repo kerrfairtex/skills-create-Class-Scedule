@@ -1,61 +1,33 @@
-# Create applications with the Copilot CLI
+To architect and deploy the **Class Schedule Management System** as a production-ready web application for the BSIT department at Tawi-Tawi Regional Agricultural College (TRAC), we must transition from manual, error-prone spreadsheets to a structured, centralized Management Information System (MIS) [1-3]. This system is designed as a specialized administrative asset that replaces decentralized methodologies with an automated, modular framework [4-6].
 
-_Learn to use GitHub Copilot CLI—a standalone terminal application—for issue management and building a Node.js calculator application._
+### 1. High-Level System Architecture
+The application is architected as a **web-based system** strictly optimized for **desktop and laptop web browsers**, specifically excluding mobile device support to maintain the integrity of complex scheduling interfaces like drag-and-drop timetables [7-9]. 
 
-## Welcome
+*   **Backend Environment:** We utilize **Python 3.10+** for the core logic, as it is stable, mature, and directly relevant to the BSIT curriculum [10-12]. 
+*   **Database Layer:** **SQLite 3** serves as the embedded, file-based relational database engine [10, 13, 14]. Its serverless nature is ideal for localized deployment, eliminating the need for complex server installations or professional administrative oversight [15-17].
+*   **Deployment Model:** To ensure **100% operational availability** regardless of regional internet instability, the system is deployed on a centralized machine within a **Local Area Network (LAN)** [18-20].
 
-- **Who is this for**: Developers who want to learn how to use the standalone GitHub Copilot CLI to streamline their development workflow
-- **What you'll learn**: How to install and use GitHub Copilot CLI as a standalone terminal tool for creating issues, generating code, and collaborating interactively from the command line
-- **What you'll build**: A Node.js calculator app using Copilot CLI for project setup, issue management, and collaborative development
-- **Prerequisites**:
-  - Familiarity with basic command line (CLI) operations
-  - Basic knowledge of GitHub repositories
-  - Node.js version 22 or later (for Copilot CLI installation)
-  - A GitHub Copilot subscription (Free, Pro, Pro+, Business, or Enterprise)
+### 2. Core Functional Modules (MOD-01 to MOD-08)
+The system is decomposed into eight specialized modules to manage the scheduling lifecycle [21-23]:
 
-- **How long**: This exercise takes less than 60 minutes to complete.
+*   **MOD-01 (Authentication):** Implements **Role-Based Access Control (RBAC)** for Admin, Faculty, and Students [24-26].
+*   **MOD-02 (Master List Management):** The central repository for **CRUD operations** on teacher profiles (availability/subjects), curriculum data (subject codes/units), facility data (room capacities), and section information [23, 27-32].
+*   **MOD-03 (Schedule Generation):** An algorithmic engine that automatically correlates instructors, rooms, and subjects with time slots based on pre-encoded constraints [21, 33, 34].
+*   **MOD-04 (Conflict Detection):** A rigorous mathematical validation module achieving **100% accuracy** in identifying overlapping time slots, double-booked rooms, and teacher assignment conflicts [35-38].
+*   **MOD-05 (Manual Adjustment):** Provides a visually intuitive **drag-and-drop interface** for administrators to fine-tune entries that the algorithm cannot satisfy for special edge cases [36, 39, 40].
+*   **MOD-06 & MOD-07 (Stakeholder Access):** Tailored viewing and printing functionalities that generate role-specific timetables and formatted hardcopies [41-43].
+*   **MOD-08 (Database Management):** A silent background service ensuring **relational integrity** and automated synchronization across all modules to prevent "orphaned" records [21, 44-46].
 
-In this exercise, you will:
+### 3. Data Integrity and Security Protocols
+Production-grade deployment requires strict adherence to relational rules to maintain institutional data health [9, 47, 48].
+*   **Relational Integrity:** Any modification in the master list—such as changing a teacher's availability—is automatically reflected across the entire system to prevent inconsistent scheduling [46, 49, 50].
+*   **Bounded Scope:** To prevent **"feature creep"** and preserve high-performance speed, the system explicitly excludes auxiliary features such as grade computation, attendance tracking, and online enrollment [51-53].
+*   **Data Persistence:** Regular backups are managed through the background service of MOD-08 to safeguard against data loss [54-56].
 
-1. Learn to install the standalone Copilot CLI and use an issue template
-1. Use Copilot CLI to create an issue for a Node.js calculator app from an existing template
-1. Practice iterative development by working together with Copilot on the command line
+### 4. Infrastructure and Deployment Benchmarks
+The hosting hardware must be robust enough to process high volumes of heterogeneous scheduling variables [2, 57, 58].
+*   **Hardware Minimums:** An **Intel Core i3 processor** with **4GB of RAM** and **500MB of storage** is the baseline for stable performance [20, 59, 60].
+*   **Critical Protection:** An **Uninterruptible Power Supply (UPS)** with an **Automatic Voltage Regulator (AVR)** is strictly required to protect the SQLite database from power fluctuations during transactions [54, 56, 61, 62].
+*   **Phased Rollout:** Implementation begins exclusively in the BSIT department to refine data before expanding to other academic units [38, 56, 63].
 
-### What's New in Copilot CLI
-
-GitHub Copilot CLI is a standalone terminal application with exciting features:
-- **Latest AI models**: Access the newest models from OpenAI and Google
-- **Custom agents**: Create specialized agent personas for your workflows using `.github/agents/`
-- **`/delegate` command**: Delegate tasks to Copilot coding agent which works autonomously
-- **`/share` command**: Save chat sessions as Markdown files or GitHub gists
-- **Better image support**: Add images via paste and drag-and-drop
-- **MCP server support**: Integrate with Model Context Protocol tools
-- **Improved reliability**: Better handling of long-running commands and enhanced automation with headless `-p` mode
-
-
-### How to start this exercise
-
-Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
-
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=create-applications-with-the-copilot-cli&owner=%40me&name=skills-create-applications-with-the-copilot-cli&description=Exercise:+Create+Applications+with+the+Copilot+CLI&visibility=public)
-
-<details>
-<summary>Having trouble? 🤷</summary><br/>
-
-When copying the exercise, we recommend the following settings:
-
-- For owner, choose your personal account or an organization to host the repository.
-
-- We recommend creating a public repository, since private repositories will use Actions minutes.
-
-If the exercise isn't ready in 20 seconds, please check the [Actions](../../actions) tab.
-
-- Check to see if a job is running. Sometimes it simply takes a bit longer.
-
-- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
-
-</details>
-
----
-
-&copy; 2026 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+This architectural framework ensures the college transitions into a streamlined, high-performance institutional asset that reduces the time for timetable creation by **60%** and administrative workloads by **40%** [64-66].
